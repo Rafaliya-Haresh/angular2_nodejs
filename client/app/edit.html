@@ -1,0 +1,16 @@
+
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<form>
+		School Name: <input type="text" class="form-control" [(ngModel)]="formData.name">
+		Description: <input type="text" class="form-control" [(ngModel)]="formData.description">
+		Location: <input type="text" class="form-control" [(ngModel)]="formData.location">
+		<br>
+		<input type="button" class="btn btn-success" (click)="update()" value="UPDATE">
+		<input type="button" class="btn btn-default" (click)="cancel()" value="CANCEL">
+		</form>
+	</div>
+	<div class="col-md-3">
+	</div>
+</div>

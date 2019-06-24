@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-4 pull-left" *ngIf="data.length">
+		<input type="text" class="form-control pull-left" placeholder="Search..." [(ngModel)]="name">
+	</div>
+	<a class="btn btn-primary pull-right" (click)="createSchool()">Create/Add School</a>
+</div><br>
+	<div *ngIf="data.length">
+		<table class="table">
+			<tr>
+				<th>School Name</th>
+				<th>Description</th>
+				<th>Location</th>
+				<th>Actions</th>
+			</tr>
+			<tr *ngFor="let d of data | filter: name">
+				<td>{{d.name}}</td>
+				<td>{{d.description}}</td>
+				<td>{{d.location}}</td>
+				<td>
+					<input type="button" class="btn btn-primary" (click)="onEdit(d)" value="Edit">
+					<input type="button" class="btn btn-danger" (click)="delete(d)" value="Delete">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div *ngIf="!data.length" style="text-align:center">
+		<h5>There no any data.</h5>
+	</div>
